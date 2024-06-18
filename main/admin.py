@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import NnaUser, NnaCategory, NnaFAQ
 
-# Register your models here.
+admin.site.register(NnaUser)
+admin.site.register(NnaCategory)
+admin.site.register(NnaFAQ)

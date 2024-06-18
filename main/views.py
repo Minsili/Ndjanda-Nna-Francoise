@@ -3,7 +3,7 @@ from .models import NnaFAQ, NnaCategory
 from .forms import FAQForm
 
 def index(request):
-    faqs = FAQ.objects.all()
+    faqs = NnaFAQ.objects.all() 
     return render(request, 'index.html', {'faqs': faqs})
 
 def faq_create(request):
@@ -17,7 +17,7 @@ def faq_create(request):
     return render(request, 'faq_form.html', {'form': form})
 
 def faq_update(request, pk):
-    faq = get_object_or_404(FAQ, pk=pk)
+    faq = get_object_or_404(NnaFAQ, pk=pk)
     if request.method == 'POST':
         form = FAQForm(request.POST, instance=faq)
         if form.is_valid():
@@ -28,7 +28,7 @@ def faq_update(request, pk):
     return render(request, 'faq_form.html', {'form': form})
 
 def faq_delete(request, pk):
-    faq = get_object_or_404(FAQ, pk=pk)
+    faq = get_object_or_404(NnaFAQ, pk=pk)
     if request.method == 'POST':
         faq.delete()
         return redirect('index')
