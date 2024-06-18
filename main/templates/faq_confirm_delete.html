@@ -1,0 +1,16 @@
+<!-- templates/faq_confirm_delete.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete FAQ</title>
+</head>
+<body>
+    <h1>Delete FAQ</h1>
+    <p>Are you sure you want to delete "{{ faq.question }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+    <a href="{% url 'index' %}">Cancel</a>
+</body>
+</html>

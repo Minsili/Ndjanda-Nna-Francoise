@@ -1,0 +1,16 @@
+<!-- templates/faq_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FAQ Form</title>
+</head>
+<body>
+    <h1>{{ form.instance.pk|default:"Create" }} FAQ</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'index' %}">Back to FAQ list</a>
+</body>
+</html>
