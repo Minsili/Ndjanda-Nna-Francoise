@@ -12,4 +12,4 @@ class NnaFAQ(models.Model):
     question = models.CharField(max_length=255)
     answer = models.TextField()
     date_created = models.DateTimeField(auto_now_add=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(NnaCategory, on_delete=models.CASCADE)
